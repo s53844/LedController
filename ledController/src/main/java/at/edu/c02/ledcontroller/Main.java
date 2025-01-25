@@ -19,20 +19,25 @@ public class Main {
             System.out.println("Enter 'demo' to send a demo request");
             System.out.println("Enter 'status' to check the status of an LED");
             System.out.println("Enter 'groupstatus' to check the status of a group of LEDs");
+            System.out.println("Enter 'turnon-all' to check the status of a group of LEDs");
+            System.out.println("Enter 'turnoff-all' to check the status of a group of LEDs");
+
             System.out.println("Enter 'exit' to exit the program");
             input = reader.readLine();
 
-            if (input.equalsIgnoreCase("turnoff")) {
-                ledController.turnOffAllLeds();
-            }
-
-            if(input.equalsIgnoreCase("demo"))
-            {
+            if(input.equalsIgnoreCase("demo")) {
                 ledController.demo();
             }
-            if (input.equalsIgnoreCase("groupstatus"))
-            {
+            if (input.equalsIgnoreCase("groupstatus")) {
                 ledController.getGroupLeds("H");
+            }
+
+            if (input.equalsIgnoreCase("turnon-all")) {
+                ledController.turnOnAllLeds();
+            }
+
+            if (input.equalsIgnoreCase("turnoff-all")) {
+                ledController.turnOffAllLeds();
             }
             if (input.equalsIgnoreCase("status")) {
                 System.out.println("Please specify LED ID:");

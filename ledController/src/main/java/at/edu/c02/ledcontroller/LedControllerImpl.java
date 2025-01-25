@@ -58,8 +58,23 @@ public class LedControllerImpl implements LedController {
     }
 
     @Override
-    public void turnOffAllLeds() throws IOException {
+    public void turnOnAllLeds() throws IOException {
+        int[] ledIds = {2, 10, 11, 12, 13, 14, 15, 16};
+        for (int ledId : ledIds) {
 
+            JSONObject requestBody = new JSONObject();
+            requestBody.put("id", ledId);
+            requestBody.put("color", "#009000");
+            requestBody.put("state", true); // LED einschalten
+
+            apiService.setLight(requestBody);
+        }
+
+        System.out.println("Alle LEDs wurden eingeschalten.");
+    }
+
+    @Override
+    public void turnOffAllLeds() throws IOException {
         int[] ledIds = {2, 10, 11, 12, 13, 14, 15, 16};
         for (int ledId : ledIds) {
 
