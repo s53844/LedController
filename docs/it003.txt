@@ -21,3 +21,11 @@ Alle sind unabhängig voneinander, bis auf Refactoring + 2.1.
 
 Julian & Matthias - Debugging vom refactored code
 Simon - Story 2.5 fertig. Startet mit 3.1
+
+2. Daily
+
+skipped
+
+Retro
+
+Nicht gut. Es ist leider wenig weitergegangen wegen des Refactor.
