@@ -16,3 +16,8 @@ Welche Stories werden umgesetzt:
    - Julian, Matthias, Simon
 
 Alle sind unabhängig voneinander, bis auf Refactoring + 2.1.
+
+1. Daily
+
+Julian & Matthias - Debugging vom refactored code
+Simon - Story 2.5 fertig. Startet mit 3.1
