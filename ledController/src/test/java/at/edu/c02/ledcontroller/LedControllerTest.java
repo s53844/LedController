@@ -62,4 +62,16 @@ public class LedControllerTest {
         verify(apiServiceMock, times(4)).setLight(any(JSONObject.class));
     }
 
+    @Test
+    public void testSpinningLed() throws IOException {
+        ApiService apiServiceMock = mock(ApiService.class);
+
+        LedControllerImpl ledController = new LedControllerImpl(apiServiceMock);
+
+        ledController.spinningLed("#ff0000", 2);
+
+        verify(apiServiceMock, atLeast(16)).setLight(any(JSONObject.class));
+    }
+
+
 }
