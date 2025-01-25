@@ -74,4 +74,36 @@ public class LedControllerImpl implements LedController {
         System.out.println("Alle LEDs wurden ausgeschaltet.");
     }
 
+    @Override
+    public void spinningLed(String color, int turns) throws IOException {
+        int[] ledIds = {2, 10, 11, 12, 13, 14, 15, 16};
+
+        turnOffAllLeds();
+        for (int t = 0; t < turns; t++) {
+            for (int i = 0; i < ledIds.length; i++) {
+                JSONObject requestBodyOn = new JSONObject();
+                requestBodyOn.put("id", ledIds[i]);
+                requestBodyOn.put("color", color);
+                requestBodyOn.put("state", true);
+                apiService.setLight(requestBodyOn);
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+
+                // LED ausschalten
+                JSONObject requestBodyOff = new JSONObject();
+                requestBodyOff.put("id", ledIds[i]);
+                requestBodyOff.put("color", "#000000");
+                requestBodyOff.put("state", false);
+                apiService.setLight(requestBodyOff);
+            }
+        }
+
+        turnOffAllLeds();
+        System.out.println("Lauflicht abgeschlossen.");
+    }
+
 }

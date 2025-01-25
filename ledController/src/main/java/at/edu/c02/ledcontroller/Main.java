@@ -22,6 +22,20 @@ public class Main {
             System.out.println("Enter 'exit' to exit the program");
             input = reader.readLine();
 
+            if (input.equalsIgnoreCase("spinningled")) {
+                System.out.println("Which color?");
+                String color = reader.readLine();
+                System.out.println("How many turns?");
+                String turnsInput = reader.readLine();
+                try {
+                    int turns = Integer.parseInt(turnsInput);
+                    ledController.spinningLed(color, turns);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid number of turns. Please enter a numeric value.");
+                }
+            }
+
+
             if (input.equalsIgnoreCase("turnoff")) {
                 ledController.turnOffAllLeds();
             }
