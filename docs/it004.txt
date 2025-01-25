@@ -1,0 +1,17 @@
+4. Iteration
+
+Welche Stories werden umgesetzt:
+
+- Story 2.1 - Setzen einer LED - fertigstellen
+    - Schätzung 3
+    - Matthias
+- Story 3.1 Secrets
+    - Schätzung 1
+    - Julian, Simon
+- Story 3.2 Spinning Wheel
+    - Schätzung 13
+    - Simon, Julian, Matthias
+
+1. Daily
+
+2.1 ist fertig. Neues Secret wurde auch gefunden. Spinning Wheel gestartet.
