@@ -50,7 +50,7 @@ public class ApiServiceImpl implements ApiService {
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
         // and send a GET request
-        connection.setRequestMethod("PUT");
+        connection.setRequestMethod(restMethod);
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("X-Hasura-Group-ID", "e3b0c44298fc1c149afbf4c8996fbH");
         connection.setDoOutput(true);
