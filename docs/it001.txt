@@ -32,3 +32,9 @@ Aufgabenteilung:
 Matthias - Projekt läuft lokal. Story 1 im Gange. ApiService bereits erweitert. Startet jetzt mit Refactoring.
 Julian - Projekt läuft lokal, nach schwierigen mit SDK. Story 2 begonnen.
 Simon - Issues erstellt. Projekt läuft lokal.
+
+2. Daily
+
+Julian - Bei der Funktion getGroupsLed. Fast fertig damit.
+Matthias - Refactor fast fertig. Story insgesamt fast fertig.
+Simon - Issues erweitert und verbessert.
