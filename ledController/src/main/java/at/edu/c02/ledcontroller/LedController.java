@@ -10,4 +10,7 @@ public interface LedController {
 
     void spinningLed(String color, int turns) throws IOException;
 
+    void setLed(int id, String color) throws IOException;
+
+
 }

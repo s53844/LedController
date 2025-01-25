@@ -22,6 +22,21 @@ public class Main {
             System.out.println("Enter 'exit' to exit the program");
             input = reader.readLine();
 
+            if (input.equalsIgnoreCase("setled")) {
+                System.out.println("Which LED?");
+                String ledIdInput = reader.readLine();
+                System.out.println("Which color?");
+                String color = reader.readLine();
+
+                try {
+                    int ledId = Integer.parseInt(ledIdInput);
+                    ledController.setLed(ledId, color);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid LED ID. Please enter a numeric value.");
+                }
+            }
+
+
             if (input.equalsIgnoreCase("spinningled")) {
                 System.out.println("Which color?");
                 String color = reader.readLine();
