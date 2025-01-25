@@ -19,3 +19,9 @@ Alle sind unabhängig voneinander.
 Matthias - Nochmal refactoring, Story 2.1 im Gange
 Julian - 1.3 im Gange, fast fertig
 Simon - 2.2 implementiert, aber muss noch getestet werden
+
+2. Daily
+
+Matthias - 2.1 im Gange, Abstimmung mit Simon, weil gleicher Code
+Julian - 1.3 fertig. Unterstützer für die anderen zwei Stories
+
