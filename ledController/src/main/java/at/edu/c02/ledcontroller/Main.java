@@ -53,15 +53,11 @@ public class Main {
                 }
             }
 
-
-            if (input.equalsIgnoreCase("turnoff")) {
-                ledController.turnOffAllLeds();
-            }
-
             if(input.equalsIgnoreCase("demo"))
             {
                 ledController.demo();
             }
+
             if (input.equalsIgnoreCase("groupstatus"))
             {
                 ledController.getGroupLeds("H");
@@ -74,6 +70,7 @@ public class Main {
             if (input.equalsIgnoreCase("turnoff-all")) {
                 ledController.turnOffAllLeds();
             }
+
             if (input.equalsIgnoreCase("status")) {
                 System.out.println("Please specify LED ID:");
                 String ledIdInput = reader.readLine();
