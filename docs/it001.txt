@@ -38,3 +38,14 @@ Simon - Issues erstellt. Projekt läuft lokal.
 Julian - Bei der Funktion getGroupsLed. Fast fertig damit.
 Matthias - Refactor fast fertig. Story insgesamt fast fertig.
 Simon - Issues erweitert und verbessert.
+
+Sprint Retro
+
+Wie ist der Sprint gelaufen?
+- Holprig
+- Stressiges Gefühl mit den Dailys, weil man sowieso redet wenn was ansteht
+
+Wurde alles geschafft
+- Sprint haben wir nicht vollständig abschließen können
+- Es fehlt die dritte Story, weil wir die ersten beiden noch nicht gemerged haben
+und somit noch nicht vernünftig starten haben können
