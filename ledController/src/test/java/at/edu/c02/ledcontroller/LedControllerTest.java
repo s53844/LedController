@@ -50,4 +50,16 @@ public class LedControllerTest {
 
         verify(apiServiceMock, times(1)).getLights();
     }
+
+    @Test
+    public void testTurnOffAllLeds() throws IOException {
+        ApiService apiServiceMock = mock(ApiService.class);
+
+        LedControllerImpl ledController = new LedControllerImpl(apiServiceMock);
+
+        ledController.turnOffAllLeds();
+
+        verify(apiServiceMock, times(4)).setLight(any(JSONObject.class));
+    }
+
 }

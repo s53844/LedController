@@ -65,4 +65,24 @@ public class ApiServiceImpl implements ApiService {
         // Convert response into a json object
         return new JSONObject(jsonText);
     }
+
+    @Override
+    public void setLight(JSONObject requestBody) throws IOException {
+        URL url = new URL("https://balanced-civet-91.hasura.app/api/rest/setLight");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        connection.setRequestMethod("PUT");
+        connection.setRequestProperty("Content-Type", "application/json");
+        connection.setRequestProperty("X-Hasura-Group-ID", "YourGroupID"); // Ersetze mit korrektem Wert
+        connection.setDoOutput(true);
+
+        // Sende JSON-Body
+        connection.getOutputStream().write(requestBody.toString().getBytes());
+
+        int responseCode = connection.getResponseCode();
+        if (responseCode != HttpURLConnection.HTTP_OK) {
+            throw new IOException("Fehler beim Ausschalten der LEDs: " + responseCode);
+        }
+    }
+
 }

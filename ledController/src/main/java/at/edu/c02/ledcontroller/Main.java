@@ -21,6 +21,11 @@ public class Main {
             System.out.println("Enter 'groupstatus' to check the status of a group of LEDs");
             System.out.println("Enter 'exit' to exit the program");
             input = reader.readLine();
+
+            if (input.equalsIgnoreCase("turnoff")) {
+                ledController.turnOffAllLeds();
+            }
+
             if(input.equalsIgnoreCase("demo"))
             {
                 ledController.demo();
