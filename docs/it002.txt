@@ -13,3 +13,9 @@ Welche Stories werden umgesetzt:
     - Simon
 
 Alle sind unabhängig voneinander.
+
+1. Daily
+
+Matthias - Nochmal refactoring, Story 2.1 im Gange
+Julian - 1.3 im Gange, fast fertig
+Simon - 2.2 implementiert, aber muss noch getestet werden
