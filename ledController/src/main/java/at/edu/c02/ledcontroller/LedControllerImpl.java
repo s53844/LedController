@@ -106,4 +106,16 @@ public class LedControllerImpl implements LedController {
         System.out.println("Lauflicht abgeschlossen.");
     }
 
+    @Override
+    public void setLed(int id, String color) throws IOException {
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("id", id);
+        requestBody.put("color", color);
+        requestBody.put("state", true); // Automatisch einschalten
+
+        apiService.setLight(requestBody);
+
+        System.out.println("LED " + id + " wurde auf Farbe " + color + " gesetzt und eingeschaltet.");
+    }
+
 }

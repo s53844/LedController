@@ -73,5 +73,21 @@ public class LedControllerTest {
         verify(apiServiceMock, atLeast(16)).setLight(any(JSONObject.class));
     }
 
+    @Test
+    public void testSetLed() throws IOException {
+        ApiService apiServiceMock = mock(ApiService.class);
+
+        LedControllerImpl ledController = new LedControllerImpl(apiServiceMock);
+
+        ledController.setLed(13, "#ff0000");
+
+        verify(apiServiceMock, times(1)).setLight(argThat(requestBody ->
+                requestBody.getInt("id") == 13 &&
+                        requestBody.getString("color").equals("#ff0000") &&
+                        requestBody.getBoolean("state")
+        ));
+    }
+
+
 
 }
