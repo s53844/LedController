@@ -50,4 +50,22 @@ public class LedControllerImpl implements LedController {
         System.out.println("Lights in group '" + groupName + "':");
         groupLights.forEach(light -> System.out.println(light.toString()));
     }
+
+    @Override
+    public void turnOffAllLeds() throws IOException {
+
+        int[] ledIds = {1, 2, 3, 4};
+        for (int ledId : ledIds) {
+
+            JSONObject requestBody = new JSONObject();
+            requestBody.put("id", ledId);
+            requestBody.put("color", "#000000");
+            requestBody.put("state", false); // LED ausschalten
+
+            apiService.setLight(requestBody);
+        }
+
+        System.out.println("Alle LEDs wurden ausgeschaltet.");
+    }
+
 }

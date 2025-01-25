@@ -19,6 +19,11 @@ public class Main {
             System.out.println("Enter 'demo' to send a demo request");
             System.out.println("Enter 'exit' to exit the program");
             input = reader.readLine();
+
+            if (input.equalsIgnoreCase("turnoff")) {
+                ledController.turnOffAllLeds();
+            }
+
             if(input.equalsIgnoreCase("demo"))
             {
                 ledController.demo();
