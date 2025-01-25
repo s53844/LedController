@@ -1,0 +1,18 @@
+3. Iteration
+
+Welche Stories werden umgesetzt:
+
+- Refactoring von doppelten Code
+    - Schätzung: 5
+    - Matthias, Julian
+- Story 2.1 - Setzen einer LED - fertigstellen
+    - Schätzung 3
+    - Matthias
+- Story 2.5 - Demo-Programm
+    - Schätzung 3
+    - Simon
+- Story 3.1 - Secrets
+   - Schätzung 1
+   - Julian, Matthias, Simon
+
+Alle sind unabhängig voneinander, bis auf Refactoring + 2.1.
