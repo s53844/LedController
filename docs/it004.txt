@@ -15,3 +15,8 @@ Welche Stories werden umgesetzt:
 1. Daily
 
 2.1 ist fertig. Neues Secret wurde auch gefunden. Spinning Wheel gestartet.
+
+2. Daily
+
+Secrets sind bei jedem eingerichtet. Github Actions funktionieren nicht, ohne Grund.
+Wir müssen noch unsere Tests fixen.
