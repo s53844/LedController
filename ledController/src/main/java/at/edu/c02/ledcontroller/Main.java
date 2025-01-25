@@ -25,6 +25,17 @@ public class Main {
             System.out.println("Enter 'exit' to exit the program");
             input = reader.readLine();
 
+            if (input.equalsIgnoreCase("spinningwheel")) {
+                System.out.println("How many steps?");
+                String stepsInput = reader.readLine();
+                try {
+                    int steps = Integer.parseInt(stepsInput);
+                    ledController.spinningWheel(steps);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid number of steps. Please enter a numeric value.");
+                }
+            }
+
             if (input.equalsIgnoreCase("setled")) {
                 System.out.println("Which LED?");
                 String ledIdInput = reader.readLine();
