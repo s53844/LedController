@@ -59,7 +59,7 @@ public class LedControllerTest {
 
         ledController.turnOffAllLeds();
 
-        verify(apiServiceMock, times(4)).setLight(any(JSONObject.class));
+        verify(apiServiceMock, times(8)).setLight(any(JSONObject.class));
     }
 
     @Test
@@ -74,20 +74,14 @@ public class LedControllerTest {
     }
 
     @Test
-    public void testSetLed() throws IOException {
-        ApiService apiServiceMock = mock(ApiService.class);
-
-        LedControllerImpl ledController = new LedControllerImpl(apiServiceMock);
+    public void endToEndSetLed() throws IOException {
+        ApiServiceImpl apiService = new ApiServiceImpl();
+        LedControllerImpl ledController = new LedControllerImpl(apiService);
 
         ledController.setLed(13, "#ff0000");
 
-        verify(apiServiceMock, times(1)).setLight(argThat(requestBody ->
-                requestBody.getInt("id") == 13 &&
-                        requestBody.getString("color").equals("#ff0000") &&
-                        requestBody.getBoolean("state")
-        ));
+        JSONObject light = apiService.getLight(13).getJSONArray("lights").getJSONObject(0);
+
+        assertEquals("#ff0000", light.getString("color"));
     }
-
-
-
 }
