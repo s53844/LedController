@@ -78,6 +78,7 @@ public class LedControllerImpl implements LedController {
     public void spinningLed(String color, int turns) throws IOException {
         int[] ledIds = {2, 10, 11, 12, 13, 14, 15, 16};
 
+        turnOffAllLeds();
         for (int t = 0; t < turns; t++) {
             for (int i = 0; i < ledIds.length; i++) {
                 JSONObject requestBodyOn = new JSONObject();
