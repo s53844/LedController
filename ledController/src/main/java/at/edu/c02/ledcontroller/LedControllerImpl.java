@@ -54,13 +54,13 @@ public class LedControllerImpl implements LedController {
     @Override
     public void turnOffAllLeds() throws IOException {
 
-        int[] ledIds = {1, 2, 3, 4};
+        int[] ledIds = {2, 10, 11, 12, 13, 14, 15, 16};
         for (int ledId : ledIds) {
 
             JSONObject requestBody = new JSONObject();
             requestBody.put("id", ledId);
             requestBody.put("color", "#000000");
-            requestBody.put("state", true); // LED ausschalten
+            requestBody.put("state", false); // LED ausschalten
 
             apiService.setLight(requestBody);
         }
