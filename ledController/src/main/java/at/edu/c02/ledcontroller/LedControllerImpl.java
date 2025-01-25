@@ -60,7 +60,7 @@ public class LedControllerImpl implements LedController {
     @Override
     public void turnOffAllLeds() throws IOException {
 
-        int[] ledIds = {2, 10. 11, 12, 13, 14, 15, 16};
+        int[] ledIds = {2, 10, 11, 12, 13, 14, 15, 16};
         for (int ledId : ledIds) {
 
             JSONObject requestBody = new JSONObject();

@@ -73,7 +73,7 @@ public class ApiServiceImpl implements ApiService {
 
         connection.setRequestMethod("PUT");
         connection.setRequestProperty("Content-Type", "application/json");
-        connection.setRequestProperty("X-Hasura-Group-ID", "YourGroupID"); // Ersetze mit korrektem Wert
+        connection.setRequestProperty("X-Hasura-Group-ID", "e3b0c44298fc1c149afbf4c8996fbH"); // Ersetze mit korrektem Wert
         connection.setDoOutput(true);
 
         // Sende JSON-Body
