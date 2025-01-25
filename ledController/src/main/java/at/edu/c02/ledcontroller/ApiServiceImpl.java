@@ -2,9 +2,7 @@ package at.edu.c02.ledcontroller;
 
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -44,6 +42,19 @@ public class ApiServiceImpl implements ApiService {
         CheckResponseCode(connection);
     }
 
+    private String getSecret() throws IOException {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("secret.txt");
+
+        if (inputStream == null) {
+            throw new FileNotFoundException("Die Datei 'secret.txt' wurde im Klassenpfad nicht gefunden!");
+        }
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            String secret = reader.readLine().trim();
+            return secret;
+        }
+    }
+
     private HttpURLConnection GetConnection(String restSubURL, String restMethod) throws  IOException {
         // Connect to the server
         URL url = new URL("https://balanced-civet-91.hasura.app/api/rest/" + restSubURL);
@@ -52,7 +63,7 @@ public class ApiServiceImpl implements ApiService {
         // and send a GET request
         connection.setRequestMethod(restMethod);
         connection.setRequestProperty("Content-Type", "application/json");
-        connection.setRequestProperty("X-Hasura-Group-ID", "e3b0c44298fc1c149afbf4c8996fbH");
+        connection.setRequestProperty("X-Hasura-Group-ID", getSecret());
         connection.setDoOutput(true);
 
         return  connection;
