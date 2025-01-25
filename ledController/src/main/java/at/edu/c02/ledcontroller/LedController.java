@@ -13,5 +13,6 @@ public interface LedController {
 
     void setLed(int id, String color) throws IOException;
 
+    void spinningWheel(int steps) throws IOException;
 
 }

@@ -133,4 +133,62 @@ public class LedControllerImpl implements LedController {
         System.out.println("LED " + id + " wurde auf Farbe " + color + " gesetzt und eingeschaltet.");
     }
 
+    @Override
+    public void spinningWheel(int steps) throws IOException {
+        int[] ledIds = {2, 10, 11, 12, 13, 14, 15, 16};
+
+        JSONObject response = apiService.getLights();
+        JSONArray lights = response.getJSONArray("lights");
+
+        JSONArray sortedLights = new JSONArray();
+        for (int id : ledIds) {
+            for (int i = 0; i < lights.length(); i++) {
+                JSONObject light = lights.getJSONObject(i);
+                if (light.getInt("id") == id) {
+                    sortedLights.put(light);
+                    break;
+                }
+            }
+        }
+
+        for (int step = 0; step < steps; step++) {
+            String[] colors = new String[ledIds.length];
+            boolean[] states = new boolean[ledIds.length];
+
+            for (int i = 0; i < sortedLights.length(); i++) {
+                JSONObject light = sortedLights.getJSONObject(i);
+                colors[i] = light.getString("color");
+                states[i] = light.getBoolean("on");
+            }
+
+            String[] shiftedColors = new String[ledIds.length];
+            boolean[] shiftedStates = new boolean[ledIds.length];
+
+            for (int i = 0; i < colors.length; i++) {
+                int newIndex = (i + 1) % colors.length;
+                shiftedColors[newIndex] = colors[i];
+                shiftedStates[newIndex] = states[i];
+            }
+
+            for (int i = 0; i < ledIds.length; i++) {
+                JSONObject requestBody = new JSONObject();
+                requestBody.put("id", ledIds[i]);
+                requestBody.put("color", shiftedStates[i] ? shiftedColors[i] : "#000000");
+                requestBody.put("state", shiftedStates[i]);
+                apiService.setLight(requestBody);
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        turnOffAllLeds();
+        System.out.println("Spinning-Wheel-Effekt abgeschlossen.");
+    }
+
+
+
 }
