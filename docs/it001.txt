@@ -1,0 +1,28 @@
+1. Iteration
+
+- Sprint Planning
+
+* Einrichtung des Projekts lokal
+	* Jeder
+
+Epic 1
+
+* Story 1.1 - Einzel-Status-Abfrage - Schätzung: 3
+	* ApiService erweitern um getLight(id)-Methode, die den Status einer spezischen LED abruft
+	* ApiServiceImpl dabei refactoren, sodass gemeinsamer Code in eine Methode ausgelagert wird
+* Story 1.2 - Gruppen-Status-Abfrage - Schätzung: 8
+	* LedController erweitern um getGroupLeds()-Methode, die ein Array aus allen LED-Status der Gruppen-LEDs zurückgibt
+	* Test hinzufügen, der den ApiService mocked und prüft, dass getGroupLeds() die korrekten Methoden aufruft
+	* In den Tests sollen keine API-Calls zum tatsächlichen Server gesendet werden!
+* Story 1.3 - Status-Abfrage - Schätzung: 5
+	* Main erweitern, sodass groupstatus eingegeben werden kann, um den Status aller Gruppen-LEDs anzuzeigen
+	* Main erweitern, sodass status eingegeben werden kann, um den Status einer LED abzufragen. Dabei wird die ID abgefragt
+
+
+Abhängigkeiten:
+- Story 3 abhängig von ersten beiden
+
+Aufgabenteilung:
+- Story 1 - Matthias
+- Story 2 - Julian & Simon
+- Story 3 - Julian & Matthias
