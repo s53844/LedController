@@ -1,0 +1,15 @@
+2. Iteration
+
+Welche Stories werden umgesetzt:
+
+- Story 1.3 - Status-Abfrage
+    - Schätzung: 3
+    - Julian
+- Story 2.1 - Setzen einer LED
+    - Schätzung: 8
+    - Matthias
+- Story 2.2 - Ausschalten aller LEDs
+    - Schätzung: 5
+    - Simon
+
+Alle sind unabhängig voneinander.
