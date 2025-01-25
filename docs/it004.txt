@@ -20,3 +20,9 @@ Welche Stories werden umgesetzt:
 
 Secrets sind bei jedem eingerichtet. Github Actions funktionieren nicht, ohne Grund.
 Wir müssen noch unsere Tests fixen.
+
+Retro
+
+Es war ok. Es konnte nicht alles umgesetzt werden. Wir sind noch Mitten in der Entwicklung des Spinning Wheels.
+Wir konnten auch fehlgeschlagene Tests fixen.
+
