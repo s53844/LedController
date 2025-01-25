@@ -5,7 +5,8 @@ import java.io.IOException;
 public interface LedController {
     void demo() throws IOException;
     void getGroupLeds(String groupName) throws IOException;
-    void getSingleLed(int id) throws IOException;;
+    void getSingleLed(int id) throws IOException;
+    void turnOnAllLeds() throws IOException;
     void turnOffAllLeds() throws IOException;
 
     void spinningLed(String color, int turns) throws IOException;
