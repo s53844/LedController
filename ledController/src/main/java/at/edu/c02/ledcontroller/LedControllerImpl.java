@@ -50,4 +50,10 @@ public class LedControllerImpl implements LedController {
         System.out.println("Lights in group '" + groupName + "':");
         groupLights.forEach(light -> System.out.println(light.toString()));
     }
+
+    @Override
+    public void getSingleLed(int id) throws IOException {
+        JSONObject response = apiService.getLight(id);
+        System.out.println(response.toString());
+    }
 }
