@@ -60,7 +60,7 @@ public class LedControllerImpl implements LedController {
             JSONObject requestBody = new JSONObject();
             requestBody.put("id", ledId);
             requestBody.put("color", "#000000");
-            requestBody.put("state", false); // LED ausschalten
+            requestBody.put("state", true); // LED ausschalten
 
             apiService.setLight(requestBody);
         }

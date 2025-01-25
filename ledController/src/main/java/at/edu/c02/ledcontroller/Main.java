@@ -24,6 +24,10 @@ public class Main {
                 ledController.turnOffAllLeds();
             }
 
+            if (input.equalsIgnoreCase("turnoff")) {
+                ledController.turnOffAllLeds();
+            }
+
             if(input.equalsIgnoreCase("demo"))
             {
                 ledController.demo();
